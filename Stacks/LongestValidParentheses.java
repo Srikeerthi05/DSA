@@ -11,7 +11,6 @@ class Solution {
             stk.pop();
             if(stk.isEmpty()){
                 stk.push(i);
-                
             }
             else{
                 ml=Math.max(ml,(i-stk.peek()));
