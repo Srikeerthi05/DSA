@@ -16,3 +16,23 @@ class Solution {
          return nums[left];
     }
 }
+
+
+
+
+// brute force
+public class Solution {
+    public static int findMin(int[] nums) {
+        int min=nums[0];
+        for(int i=1;i<nums.length;i++){
+            if(nums[i]<min){
+                min=nums[i];
+            }
+        }
+        return min;
+    }
+    public static void main(String args[]){
+        int nums[]={12,3,2,0,1};
+        System.out.println(findMin(nums));
+    }
+}
