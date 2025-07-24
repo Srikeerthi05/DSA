@@ -2,12 +2,12 @@
 class Solution {
     public int[][] merge(int[][] intervals) {
         Arrays.sort(intervals,(a,b)->Integer.compare(a[0],b[0]));
-        List<Integer> merged[]=new ArrayList<>();
-        int n=
+        List<int[]> merged=new ArrayList<>();
+        int n=intervals.length;
         for(int i=0;i<n;i++){
             int start=intervals[i][0];
             int end=intervals[i][1];
-            if(!ans.isEmpty() && end<=ans.get(ans.size()-1)[1]){
+            if(!merged.isEmpty() && end<=merged.get(merged.size()-1)[1]){
                 continue;
             }
 
@@ -19,9 +19,30 @@ class Solution {
                     break;
                 }
             }
-            ans.add(new int[]{start,end});
+            merged.add(new int[]{start,end});
         }
-        return ans.toArray(new int[ans.size()][]);
+        return merged.toArray(new int[merged.size()][]);
         
     }
+}
+
+//optimal
+class Solution {
+    public int[][] merge(int[][] intervals) {
+        Arrays.sort(intervals,(a,b)->Integer.compare(a[0],b[0]));
+        List<int[]> merged=new ArrayList<>();
+        int n=intervals.length;
+        for (int i=0;i<n;i++){
+            if(ans.isEmpty() || arr[i][0] > ans.get(ans.size() - 1).get(1)){
+                 ans.add(Arrays.asList(arr[i][0], arr[i][1]));
+            } else {
+                int lastIndex = ans.size() - 1;
+                int mergedEnd = Math.max(ans.get(lastIndex).get(1), arr[i][1]);
+                ans.get(lastIndex).set(1, mergedEnd);
+            }
+        }
+
+        return ans;
+        }
+    
 }
