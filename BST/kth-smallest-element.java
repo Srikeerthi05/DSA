@@ -13,6 +13,9 @@
  *     }
  * }
  */
+
+
+// optimal
 class Solution {
     int count=0;
     int result=-1;
@@ -33,5 +36,24 @@ class Solution {
             return;
         }
         inorder(node.right,k);
+    }
+}
+
+// brute force
+class Solution { 
+    public int kthSmallest(TreeNode root, int k) {
+        ArrayList<Integer> list=new ArrayList<>();
+        inorder(root,list);
+        return list.get(k-1);
+        
+    }
+
+    public void inorder(TreeNode node,ArrayList<Integer> list){
+        if(node==null){
+            return;
+        }
+        inorder(node.left,list);
+        list.add(node.val);
+        inorder(node.right,list);
     }
 }
