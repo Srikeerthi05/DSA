@@ -98,6 +98,13 @@ public class template{
         }
     }
 
+    
+    public static Node update(Node root, int oldval, int newval){
+        root=delete(root,oldval);
+        root=insert(root,newval);
+        return root;
+    }
+
 
 
 
