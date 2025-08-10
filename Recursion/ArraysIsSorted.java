@@ -7,6 +7,14 @@
             return false;
         }
         return sorted(arr,i+1);
+
+     // another way
+      if(arr[i]<arr[i+1]){
+            return sorted(arr,i+1);
+        }
+        else{
+            return false;
+        }//
     }
     
     public static void main(String[] args) {
