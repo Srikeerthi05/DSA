@@ -10,6 +10,7 @@
 
      // another way
       if(arr[i]<arr[i+1]){
+            //array is sorted till now
             return sorted(arr,i+1);
         }
         else{
