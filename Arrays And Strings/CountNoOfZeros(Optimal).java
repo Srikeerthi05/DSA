@@ -1,5 +1,4 @@
-// User function Template for Java
-
+//for sorted array only.
 class Solution {
     int countZeroes(int[] arr) {
         // code here
