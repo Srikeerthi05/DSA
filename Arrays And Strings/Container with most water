@@ -8,14 +8,11 @@ class Solution {
                int w=height[j]-height[i];
                int h=Math.min(height[i],height[j]);
                int currArea=w*h;
-               int ans=Math.max(maxArea,currArea);
-               
+               int ans=Math.max(maxArea,currArea); 
            }
        }
        System.out.println(ans);
-   }
-        
-    
+   } 
 }
 
 //two pointer
