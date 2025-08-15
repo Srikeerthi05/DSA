@@ -12,9 +12,9 @@
                }
           }
           char currChar=str.charAt(i);
-          //to be 
+          //to be in new string
           subsequences(str,i+1,newStr+currChar,set);
-          //to not be
+          //to not be in new string
           subsequences(str,i+1,newStr,set);
      }
     public static void main(String[] args) {
