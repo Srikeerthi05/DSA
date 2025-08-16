@@ -4,14 +4,13 @@ class Main {
         for(int i=0;i<set.size();i++){
             System.out.print(set.get(i)+" ");
         }
-    }
-    
+        System.out.println();
+    }    
     public static void subsets(int n, ArrayList<Integer> set){
         if(n==0){
             print(set);
             return;
         }
-        
         //to add--to be
         set.add(n);
         subsets(n-1,set);
