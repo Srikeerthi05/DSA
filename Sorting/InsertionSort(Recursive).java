@@ -11,9 +11,8 @@ class Main {
                 arr[prev+1]=arr[prev];
                 prev--;
     }
-            arr[prev+1]=curr;
-        
-        InsertionSortRecursive(arr,i+1);
+    arr[prev+1]=curr;
+    InsertionSortRecursive(arr,i+1); //recursive call
     }
     public static void main(String[] args) {
        int arr[]={12,34,1,45,6};
