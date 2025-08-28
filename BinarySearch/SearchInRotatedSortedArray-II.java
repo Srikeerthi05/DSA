@@ -11,6 +11,7 @@ class Solution {
             if(nums[low]==nums[mid] && nums[mid]==nums[high]){ //only change made 
                 low=low+1;
                 high=high-1;
+                continue;
             }
             if(nums[low]<=nums[mid]){
                 if(target>=nums[low] && target<nums[mid]){
