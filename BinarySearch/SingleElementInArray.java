@@ -53,13 +53,15 @@ class Main {
         int high=n-2;
         while(low<=high){
             int mid=(low+high)/2;
-            if(arr[mid]!=arr[mid]+1 && arr[mid]!=arr[mid]-1){   //check left and right of mid
+            if(arr[mid]!=arr[mid+1] && arr[mid]!=arr[mid-1]){   //check left and right of mid
                 return arr[mid];
             }
-            if(mid%2==0 && arr[mid]==arr[mid]+1 || mid%2==1 && arr[mid]!=arr[mid]-1){  //if mid is even,check next element OR if mid is odd,check previous element
+            if(mid%2==0 && arr[mid]==arr[mid+1] || mid%2==1 && arr[mid]!=arr[mid-1]){  //if mid is even,check next element OR if mid is odd,check previous element
                 low=mid+1;
             }
+            else{
             high=mid-1;
+            }
         }
         return -1;
     }
