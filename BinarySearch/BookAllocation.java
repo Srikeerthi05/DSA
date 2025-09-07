@@ -42,3 +42,53 @@ public class Main {
         System.out.println("The answer is: " + ans);
     }
 }
+
+//optimal
+import java.util.*;
+public class Main {
+    public static int isPossible(int[] books, int pages){
+        int n=books.length;
+        int stu=1;
+        int pagesStu=0;
+        for(int i=0;i<n;i++){
+            if(pagesStu+books[i]<=pages){
+                pagesStu+=books[i];
+            }
+            else{
+                stu++;
+                pagesStu=books[i];
+            }
+        }
+        return stu;
+    }
+    public static int findPages(int[] books, int students) {
+        int n=books.length;
+        if(students>n){
+            return -1;
+        }
+        int max=Integer.MIN_VALUE;
+        int sum=0;
+        for(int i=0;i<n;i++){
+            max=Math.max(books[i],max);
+            sum+=books[i];
+        }
+       int low=max;
+       int high=sum;
+       while(low<=high){
+           int mid=low+(high-low)/2;
+           if(isPossible(books,mid)<=students){
+               high=mid-1;
+           }
+           else{
+               low=mid+1;
+           }
+       }
+        return low;
+    }
+    public static void main(String[] args) {
+        int books[]={25,46,28,49,24}; 
+        int students= 4;
+        int ans = findPages(books, students);
+        System.out.println("The answer is: " + ans);
+    }
+}
