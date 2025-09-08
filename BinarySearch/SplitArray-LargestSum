@@ -1,0 +1,33 @@
+//brute-force
+class Solution {
+     public static int isPossible(int[] nums, int middle){
+        int n=nums.length;
+        int split=1;
+        int subarraysum=0;
+        for(int i=0;i<n;i++){
+            if(subarraysum+nums[i]<=middle){
+                subarraysum+=nums[i];
+            }
+            else{
+                split++;
+                subarraysum=nums[i];
+            }
+        }
+        return split;
+    }
+    public int splitArray(int[] nums, int k) {
+        int n=nums.length;
+        int max=Integer.MIN_VALUE;
+        int sum=0;
+        for(int i=0;i<n;i++){
+            max=Math.max(max,nums[i]);
+            sum+=nums[i];
+        }
+        for(int i=max;i<=sum;i++){
+            if(isPossible(nums,i)==k){
+                return i;
+            }
+        }
+        return -1;
+    }
+}
