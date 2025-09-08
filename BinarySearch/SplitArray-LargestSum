@@ -31,3 +31,43 @@ class Solution {
         return -1;
     }
 }
+
+//optimal
+class Solution {
+     public static boolean isPossible(int[] nums, int middle,int k){
+        int n=nums.length;
+        int split=1;
+        int subarraysum=0;
+        for(int i=0;i<n;i++){
+            if(subarraysum+nums[i]<=middle){
+                subarraysum+=nums[i];
+            }
+            else{
+                split++;
+                subarraysum=nums[i];
+            }
+        }
+        return split>k?true:false;
+    }
+    public int splitArray(int[] nums, int k) {
+        int n=nums.length;
+        int max=Integer.MIN_VALUE;
+        int sum=0;
+        for(int i=0;i<n;i++){
+            max=Math.max(max,nums[i]);
+            sum+=nums[i];
+        }
+        int low=max;
+        int high=sum;
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            if(isPossible(nums,mid,k)){
+                low=mid+1;
+            }
+            else{
+                high=mid-1;
+            }
+        }
+        return low;
+    }
+}
