@@ -10,7 +10,7 @@ public class tUf {
                 count++;
                 lastCow=stalls[i];
             }
-        }
+     }
         if(count>=k){
             return true;
         }
