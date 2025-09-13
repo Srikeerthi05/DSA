@@ -1,5 +1,4 @@
 //brute and better are as similar as SearchIn2DMatrix-I
-
 //optimal
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
