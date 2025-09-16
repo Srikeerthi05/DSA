@@ -35,7 +35,6 @@ class Solution {
         return -1;   
     }
 }
-
 //optimal
 class Solution {
     public boolean possible(int[] bloomDay,int day ,int m, int k){
