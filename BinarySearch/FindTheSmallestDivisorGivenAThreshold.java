@@ -23,7 +23,6 @@ class Solution {
         return -1; 
     }
 }
-
 //optimal
 class Solution {
     public int maxi(int[] nums){
