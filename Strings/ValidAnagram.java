@@ -19,6 +19,7 @@ class Solution {
             return true;
     }
 }
+
 //optimal
 class Solution {
     public boolean isAnagram(String s, String t) {
