@@ -22,6 +22,7 @@ class LinkedList{
         LinkedList ll=new LinkedList();
         ll.head=new Node(1);
         ll.head.next=new Node(2);
+        ll.head.next.next=new Node(3);
         ll.printList();
     }
 }
