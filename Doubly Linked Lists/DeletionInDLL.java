@@ -62,6 +62,18 @@ public static Node deleteTail(Node head){
     tail.prev=null;
     return head;
 }
+public static void deleteNode(Node temp){
+    Node back=temp.prev;
+    Node front=temp.next;
+    if(front==null){
+        back.next=null;
+        temp.prev=null;
+        return;
+    }
+    back.next=front;
+    front.prev=back;
+    temp.next=temp.prev=null;
+} 
 public static Node convertArrtoDLL(int arr[]){
     Node head=new Node(arr[0]);
     Node prev=head;
@@ -86,6 +98,7 @@ public static void main(String args[]){
     head=deleteHead(head);
     head=deleteTail(head);
     head=deleteKthElement(head, 3);
+    deleteNode(head.next);
     printList(head);
 }
 }
