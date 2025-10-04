@@ -19,9 +19,17 @@ class DoublyLL{
 public static Node InsertAtHead(Node head, int val){
     Node newNode=new Node(val, head, null);
     head.prev=newNode;
-    return newNode;
-    
+    return newNode; 
 } 
+public static Node InsertAtTail(Node head, int val){
+    Node temp=head;
+    while(temp.next!=null){
+        temp=temp.next;
+    }
+    Node newNode=new Node(val ,null, temp);
+    temp.next=newNode;
+    return head;
+}    
 public static Node convertArrtoDLL(int arr[]){
     Node head=new Node(arr[0]);
     Node prev=head;
@@ -44,6 +52,7 @@ public static void main(String args[]){
     int arr[]={1,2,3,4,5};
     Node head=convertArrtoDLL(arr);
     head=InsertAtHead(head,6);
+    head=InsertAtTail(head,7);
     printList(head);
 }
 }
