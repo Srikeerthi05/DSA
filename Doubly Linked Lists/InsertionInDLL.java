@@ -63,6 +63,12 @@ public static Node InsertBeforeKthElement(Node head, int val , int k){
     temp.prev=newNode;
     return head;
 }
+public static void InsertBeforeNode(Node node, int val){
+    Node back=node.prev;
+    Node newNode= new Node(val, node,back);
+    back.next=newNode;
+    node.prev=newNode;
+}
 public static Node convertArrtoDLL(int arr[]){
     Node head=new Node(arr[0]);
     Node prev=head;
