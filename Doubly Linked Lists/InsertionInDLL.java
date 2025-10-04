@@ -29,7 +29,40 @@ public static Node InsertAtTail(Node head, int val){
     Node newNode=new Node(val ,null, temp);
     temp.next=newNode;
     return head;
-}    
+}   
+public static Node InsertBeforeTail(Node head, int val){
+    if(head.next==null){
+        return InsertAtHead(head,val);
+    }
+    Node temp=head;
+    while(temp.next!=null){
+        temp=temp.next;
+    }
+    Node back=temp.prev;
+    Node newNode=new Node(val,temp,back);
+    back.next=newNode;
+    temp.prev=newNode;
+    return head;
+}
+public static Node InsertBeforeKthElement(Node head, int val , int k){
+    if(k==1){
+        InsertAtHead(head, val);
+    }
+    Node temp=head;
+    int count=0;
+    while(temp!=null){
+        count++;
+        if(count==k){
+            break;
+        }
+        temp=temp.next;
+    }
+    Node back=temp.prev;
+    Node newNode=new Node(val , temp, back);
+    back.next=newNode;
+    temp.prev=newNode;
+    return head;
+}
 public static Node convertArrtoDLL(int arr[]){
     Node head=new Node(arr[0]);
     Node prev=head;
@@ -53,6 +86,8 @@ public static void main(String args[]){
     Node head=convertArrtoDLL(arr);
     head=InsertAtHead(head,6);
     head=InsertAtTail(head,7);
+    head=InsertBeforeTail(head,8);
+    head=InsertBeforeKthElement(head, 9, 3);
     printList(head);
 }
 }
