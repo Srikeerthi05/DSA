@@ -6,9 +6,6 @@ class Solution {
         if(head==null){
             head=newNode;
          }
-         
-
          return head;
     }
-
 }
