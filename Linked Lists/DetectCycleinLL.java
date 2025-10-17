@@ -16,7 +16,7 @@ public class Solution {
         HashMap<ListNode,Integer> mp=new HashMap<>();
         while(temp!=null){
             if(mp.containsKey(temp)){
-                return false;
+                return true;
             }
             else{
                 mp.put(temp,1);
