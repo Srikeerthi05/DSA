@@ -1,4 +1,4 @@
-//bruteforce
+//bruteforce using hashing
 /**
  * Definition for singly-linked list.
  * class ListNode {
