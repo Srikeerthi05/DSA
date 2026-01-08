@@ -1,3 +1,13 @@
+//brute
+class Solution {
+    public int getSecondLargest(int[] arr) {
+        // code here
+        int n=arr.length;
+        Arrays.sort(arr);
+        return arr[n-2];
+    }
+}
+
 //optimal-O(n)
 class Solution {
     public int getSecondLargest(int[] arr) {
