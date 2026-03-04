@@ -41,7 +41,49 @@ class Solution {
             return true;
     }
 }
-
+//better
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        String a="anagram";
+        String b="nagaram";
+        HashMap<Character, Integer> map=new HashMap<>();
+        for(int i=0;i<a.length();i++){
+            char c=a.charAt(i);
+            if(map.containsKey(c)){
+                map.put(c, map.get(c)+1);
+            }
+            else{
+                map.put(c,1);
+            }
+        }
+            for(int j=0;j<b.length();j++){
+                char s=b.charAt(j);
+                    if(map.containsKey(s)){
+                        map.put(s, map.get(s)-1);
+                    }
+                   
+            }
+            boolean flag=false;
+            for(int value: map.values()){
+                if(value!=0){
+                    flag=false;
+                }
+                else{
+                    flag=true;
+                }
+            }
+            if(flag){
+                System.out.println("Is an anagram");
+            }
+            else{
+                System.out.println("Is not an anagram");
+            }
+        
+    }
+}
 //optimal
 class Solution {
     public boolean isAnagram(String s, String t) {
