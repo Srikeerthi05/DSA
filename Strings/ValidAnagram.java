@@ -1,3 +1,25 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        String a="anagram";
+        String b="anagram";
+        
+        char s[]=a.toCharArray();
+        char t[]=b.toCharArray();
+        
+        Arrays.sort(s);
+        Arrays.sort(t);
+        
+        if(Arrays.equals(s,t)){
+            System.out.println("This is an anagram");
+        }
+       else{
+           System.out.println("This is not an anagram");
+       }
+    }
+}
 //brute force
 class Solution {
     public String sort(String str){
