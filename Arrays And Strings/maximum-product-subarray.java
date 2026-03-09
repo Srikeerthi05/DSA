@@ -1,27 +1,25 @@
+//brute
+import java.util.*;
 class Main {
-    public static int maxProduct(int[] nums) {
-        int mp=Integer.MIN_VALUE;
-        int cp=1;
-        for(int i=0;i<nums.length;i++){
-            cp=cp*nums[i];
-             mp=Math.max(cp,mp);
-            if(cp==0){
-                cp=1;
-            }     
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the size of the array:");
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        System.out.println("Enter the elements of the array: ");
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
         }
-        cp=1;
-        for(int i=nums.length-1;i>=0;i--){
-            cp=cp*nums[i];
-             mp=Math.max(cp,mp);
-            if(cp==0){
-                cp=1;
+        int max=Integer.MIN_VALUE;
+        for(int i=0;i<n;i++){
+            for(int j=i;j<n;j++){
+                int prod=1;
+                for(int k=i;k<j;k++){
+                    prod=prod*arr[k];
+                }
+                max=Math.max(max,prod);
             }
         }
-        return mp;
+        System.out.println("Maxim product of subarray : "+max);
     }
-    
-    public static void main(String args[]){
-        int nums[]={2,3,5,1};
-        System.out.println(maxProduct(nums));
-        }   
 }
