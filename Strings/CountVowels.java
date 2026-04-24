@@ -15,3 +15,23 @@ class Main {
         System.out.println(vowelcount(s));
     }
 }
+
+
+import java.util.*;
+class Main {
+    public static int vowelcount(String s){
+        int n=s.length();
+        Set<Character> vowel=new HashSet<>(Arrays.asList('a','e','i','o','u'));
+        int count=0;
+        for(char ch: s.toCharArray()){
+            if(vowel.contains(ch)){
+                count++;
+            }
+        }
+        return count;
+    }
+    public static void main(String[] args) {
+        String s="elephant";
+        System.out.println(vowelcount(s));
+    }
+}
