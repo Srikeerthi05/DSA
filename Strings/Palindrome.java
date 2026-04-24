@@ -1,4 +1,14 @@
-//brute-O(n)
+//brute-O(n^2)
+public static boolean isPalindrome(String s) {
+    String rev = "";
+
+    for (int i = s.length() - 1; i >= 0; i--) {
+        rev += s.charAt(i);
+    }
+
+    return s.equals(rev);
+}
+//Optimal-O(n)
 class Main {
     public static boolean palindrome(String s){
         int n=s.length();
